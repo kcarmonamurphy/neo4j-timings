@@ -1,0 +1,17 @@
+<%= form_with(model: neo, local: true) do |form| %>
+  <% if neo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(neo.errors.count, "error") %> prohibited this neo from being saved:</h2>
+
+      <ul>
+        <% neo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
